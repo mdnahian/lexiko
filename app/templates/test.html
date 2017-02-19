@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+        Lexiko App
+      </title>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+      <style type="text/css">
+        body {
+            overflow:hidden;
+            margin: 0px;
+         }
+         /*#my-div
+         {
+         top      : 50%;
+         width    : 450px;
+         height   : 550px;
+         transform: translateY(20%);
+         overflow : hidden;
+         position : relative;
+         margin-top: -275px;
+         margin:0 auto;
+         }
+         #my-iframe
+         {
+         position : absolute;
+         top      : -350px;
+         left     : -475px;
+         width    : 1200px;
+         height   : 900px;
+         -webkit-transform: scale(0.75);
+         border: 0;
+         text-align: center;
+         }*/
+
+         #organ{
+            margin-top: 50px;
+            width:100%;
+            min-width: 400px;
+            max-width: 800px;
+         }
+
+         #sec1{
+            position:absolute;
+            top:20px;
+            left:20px;
+            z-index:5000;
+         }
+         #sec2{
+            position:absolute;
+            left:20px;
+            bottom:20px;
+            z-index:5000;
+         }
+         #sec3{
+            position:absolute;
+            top:20px;
+            right:20px;
+            z-index:5000;
+         }
+         #sec4{
+            position:absolute;
+            bottom:20px;
+            right:20px;
+            z-index:5000;
+         }
+
+         .text {
+            font-size:15px;
+         }
+         .font {
+            font-style: 
+         }
+
+    }
+      </style>
+      <script>
+          var x = 0;
+          function button (){
+            x += 5;
+            document.getElementById("organ").src="http://109.236.101.26/3dviewerserver/3dpreviewproxy.aspx?mc=1295&site=3DC&x="+x+"&y=0&x2=0&y2=0&wh=0&rt=368&id=844028&rm=0&lm=1&sm=1&r=0&c=0"
+          }
+      </script>
+   </head>
+   <body>
+   <center>
+      <!-- <div id="my-div"> -->
+         <center><img id="organ" onclick="button()" src="http://109.236.101.26/3dviewerserver/3dpreviewproxy.aspx?mc=1295&site=3DC&x=0&y=0&x2=0&y2=0&wh=0&rt=368&id=844028&rm=0&lm=1&sm=1&r=0&c=0"/>
+    </center>
+      <!-- </div> -->
+    </center>
+    <div id="sec1">
+        <h1 class="text">
+             Description
+        </h1>
+        <p>
+            some info
+        </p>
+    </div>
+    <div id="sec2">
+        <h1 class="text">
+             Symptoms
+        </h1>
+        <p>
+            some info
+        </p>
+    </div>
+    <div id="sec3">
+        <h1 class="text">
+             Other possible diseases
+        </h1>
+        <p>
+            some info
+        </p>
+    </div>
+    <div id="sec4" >
+        <h1 class="text">
+             What you can do
+        </h1>
+        <p>
+            some info
+        </p>
+    </div>
+   </body>
+</html>
