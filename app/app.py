@@ -13,11 +13,7 @@ app.config['SECRET_KEY'] = 'lexiko'
 socketio = SocketIO(app)
 
 
-BASE_URL = 'http://6862a278.ngrok.io'
-
-
-
-
+BASE_URL = 'http://ec2-174-129-79-187.compute-1.amazonaws.com'
 
 
 def image_to_text(url):
@@ -43,40 +39,6 @@ def image_to_text(url):
 	    conn.close()
 	except Exception as e:
 	    print("[Errno {0}] {1}".format(e.errno, e.strerror))
-
-
-
-
-
-
-	headers = {
-	    # Request headers
-	    'Content-Type': 'application/json',
-	    'Ocp-Apim-Subscription-Key': 'be6d561231ec489d8593ca3ef59a67ba',
-	}
-
-	params = urllib.urlencode({
-	    # Request parameters
-	    'language': 'unk',
-	    'detectOrientation ': 'true',
-	})
-
-	try:
-	    conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
-	    conn.request("POST", "/vision/v1.0/ocr?%s" % params, '{ "url": "'+url+'" }', headers)
-	    response = conn.getresponse()
-	    raw = response.read()
-	    data = json.loads(raw)
-
-	    print 'got response'
-
-	    print data
-	except Exception as e:
-		print 'Failed'
-		print e
-
-
-
 
 
 
