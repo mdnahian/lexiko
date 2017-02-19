@@ -68,9 +68,11 @@ def image_sent(raw):
 	if raw_text != '':
 		
 		data = json.loads(raw_text)
-		
-		regions = data['regions']
-	    	for region in regions:
+			
+	
+		regions = data['regions']	    	
+
+		for region in regions:
 	    		for line in region['lines']:
 				for word in line['words']:
 					text = ''.join(i for i in word['text'] if not i.isdigit())
@@ -78,11 +80,11 @@ def image_sent(raw):
 
 					if len(text) >= 5:
 						print text
-						response = text #search_web_md(text)
+						response = get_from_web_md(text)
 						
 						if response != '':
-							emit('response', '{ "name":"something" }')
-							break
+							emit('response', '['+response.rstrip()+']')
+							return ''
 
 		return ''						
 		
